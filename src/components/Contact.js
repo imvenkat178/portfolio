@@ -16,7 +16,7 @@ const Contact = () => {
   
   // Initialize EmailJS
   useEffect(() => {
-    emailjs.init("YOUR_PUBLIC_KEY");
+    emailjs.init("31INOIX-gbmhXkqZ5");
   }, []);
   
   const handleChange = (e) => {
@@ -75,9 +75,9 @@ const Contact = () => {
     const formElement = form.current;
     
     // Your EmailJS service, template and user ID
-    const serviceID = 'YOUR_SERVICE_ID';
-    const templateID = 'YOUR_TEMPLATE_ID';
-    const publicKey = 'YOUR_PUBLIC_KEY';
+    const serviceID = 'service_kdrw31a';
+    const templateID = 'template_6shlfjb';
+    const publicKey = '31INOIX-gbmhXkqZ5';
     
     emailjs.sendForm(serviceID, templateID, formElement, publicKey)
       .then((result) => {
