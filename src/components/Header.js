@@ -9,11 +9,23 @@ const Header = () => {
     }
   };
 
+  const handleLogoClick = (e) => {
+    // Call the function to reveal the celebration button
+    if (window.revealCelebration) {
+      window.revealCelebration();
+    }
+  };
+
   return (
     <div className="bg-black text-white p-6 sticky top-0 z-10">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        {/* <Link to="/" className="text-2xl font-mono">VENKATA.DEV</Link> */}
-        <a href="https://imvenkat178.github.io/portfolio/" className="text-2xl font-mono">VENKATA.DEV</a>
+        <a 
+          href="https://imvenkat178.github.io/portfolio/" 
+          className="text-2xl font-mono"
+          onClick={handleLogoClick}
+        >
+          VENKATA.DEV
+        </a>
         <div className="hidden md:flex gap-6 text-sm">
           <button 
             onClick={() => scrollToSection('experience')} 

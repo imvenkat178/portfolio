@@ -1,57 +1,72 @@
-import React, { useState, useEffect } from 'react';
+// src/components/Celebration.js
+import React, { useState } from 'react';
 import confetti from 'canvas-confetti';
 
 const Celebration = () => {
-  const [showButton, setShowButton] = useState(() => {
-    // Check if button was previously hidden
-    const hidden = localStorage.getItem('celebrationHidden');
-    return hidden !== 'true';
-  });
+  const [showButton, setShowButton] = useState(true);
 
-  const hideButton = () => {
-    setShowButton(false);
-    localStorage.setItem('celebrationHidden', 'true');
+  // Function to make the celebration button visible again
+  const revealButton = () => {
+    setShowButton(true);
   };
 
+  // Expose the function to the window object so it can be called from anywhere
+  React.useEffect(() => {
+    window.revealCelebration = revealButton;
+    return () => {
+      delete window.revealCelebration;
+    };
+  }, []);
+
   const fireConfetti = () => {
-    // Same confetti configuration as before
-    const count = 200;
+    // Create a more intense confetti display
     const defaults = {
-      origin: { x: 0.5, y: 1.0 },
+      origin: { x: 0.5, y: 1.0 }, // Bottom center
       angle: 90,
-      spread: 100,
-      startVelocity: 30,
-      gravity: 0.5,
-      ticks: 100,
+      spread: 120, // Wider spread
+      startVelocity: 60, // Higher initial velocity to go further up
+      gravity: 0.4, // Slightly reduced gravity so confetti stays in air longer
+      ticks: 300, // More ticks for longer animation
       zIndex: 1000,
-      disableForReducedMotion: true
+      disableForReducedMotion: true,
+      shapes: ['circle', 'square'],
+      colors: ['#000000', '#FFD700'] // Black and gold
     };
 
+    // First big burst
     confetti({
       ...defaults,
-      colors: ['#000000', '#FFD700'],
-      shapes: ['circle', 'square']
+      particleCount: 150 // More particles
     });
 
+    // Second wave - left burst
     setTimeout(() => {
       confetti({
         ...defaults,
-        particleCount: 50,
+        particleCount: 100,
         angle: 120,
-        spread: 70,
-        colors: ['#000000', '#FFD700']
+        origin: { x: 0.3, y: 1.0 } // From left side
       });
-    }, 250);
+    }, 150);
 
+    // Third wave - right burst
     setTimeout(() => {
       confetti({
         ...defaults,
-        particleCount: 50,
+        particleCount: 100,
         angle: 60,
-        spread: 70,
-        colors: ['#000000', '#FFD700']
+        origin: { x: 0.7, y: 1.0 } // From right side
       });
-    }, 500);
+    }, 300);
+
+    // Fourth wave - center again for lasting effect
+    setTimeout(() => {
+      confetti({
+        ...defaults,
+        particleCount: 80,
+        startVelocity: 45
+      });
+    }, 450);
   };
 
   if (!showButton) return null;
@@ -66,7 +81,7 @@ const Celebration = () => {
         🎉
       </button>
       <button
-        onClick={hideButton}
+        onClick={() => setShowButton(false)}
         className="ml-2 bg-black text-white text-xs rounded-full h-6 w-6 flex items-center justify-center hover:bg-gray-800 transition-colors"
         aria-label="Close celebration"
       >
