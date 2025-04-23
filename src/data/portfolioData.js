@@ -6,7 +6,7 @@ const portfolioData = {
       phone: "(317) 419-8533",
       github: "GitHub",
       linkedin: "LinkedIn",
-      bio: "Experienced software engineer specializing in Java and Spring Boot with a passion for building scalable web applications and distributed systems."
+      bio : "I am Venkata Reddy Bhimireddy, a dedicated software engineer pursuing a Master's in Computer and Information Science at Purdue University Indianapolis. With professional experience developing enterprise Java applications, I specialize in building resilient, scalable systems using Spring Boot, microservices architecture, and distributed computing paradigms. My technical expertise spans both backend services and full-stack development, with a passion for creating efficient solutions that solve complex business challenges."
     },
     education: [
         {
