@@ -1,7 +1,7 @@
 const portfolioData = {
     profile: {
       name: "Venkata Reddy Bhimireddy",
-      title: "SOFTWARE ENGINEER / FULL STACK DEVELOPER ",
+      title: "SOFTWARE ENGINEER",
       email: "bhimireddyvenkatreddy2@gmail.com",
       phone: "(317) 419-8533",
       github: "GitHub",
