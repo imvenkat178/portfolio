@@ -12,7 +12,8 @@ const Header = () => {
   return (
     <div className="bg-black text-white p-6 sticky top-0 z-10">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        <Link to="/" className="text-2xl font-mono">VENKATA.DEV</Link>
+        {/* <Link to="/" className="text-2xl font-mono">VENKATA.DEV</Link> */}
+        <a href="/" onClick={(e) => { e.preventDefault(); window.location.href = '/'; }} className="text-2xl font-mono">VENKATA.DEV</a>
         <div className="hidden md:flex gap-6 text-sm">
           <button 
             onClick={() => scrollToSection('experience')} 
