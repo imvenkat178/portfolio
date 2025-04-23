@@ -2,11 +2,11 @@ const portfolioData = {
     profile: {
       name: "Venkata Reddy Bhimireddy",
       title: "SOFTWARE ENGINEER",
-      email: "bhimireddyvenkatreddy2@gmail.com",
+      email: "vbhimire@purdue.edu",
       phone: "(317) 419-8533",
       github: "GitHub",
       linkedin: "LinkedIn",
-      bio : "I am Venkata Reddy Bhimireddy, a dedicated software engineer pursuing a Master's in Computer and Information Science at Purdue University Indianapolis. With professional experience developing enterprise Java applications, I specialize in building resilient, scalable systems using Spring Boot, microservices architecture, and distributed computing paradigms. My technical expertise spans both backend services and full-stack development, with a passion for creating efficient solutions that solve complex business challenges."
+      bio : "I’m Venkata Reddy Bhimireddy, a software engineer and Master’s student at Purdue University Indianapolis. I specialize in building scalable Java applications using Spring Boot, microservices, and full-stack technologies to solve complex business problems efficiently."
     },
     education: [
         {
