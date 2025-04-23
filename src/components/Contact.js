@@ -75,7 +75,7 @@ const Contact = () => {
     const formElement = form.current;
     
     // Your EmailJS service, template and user ID
-    const serviceID = 'service_kdrw31a';
+    const serviceID = 'service_kcho82j';
     const templateID = 'template_6shlfjb';
     const publicKey = '31INOIX-gbmhXkqZ5';
     
